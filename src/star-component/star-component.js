@@ -1,10 +1,12 @@
 import "./startComponent.css"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const StarComponent = ({disabled  , rating }) =>{
 
     const [currentRating, setRating] = useState(rating);
-
+    useEffect(()=>{
+        setRating(rating);
+    },[rating])
     return(
                 <div className="d-flex align-items-center justify-content-center">
                     <div className="row justify-content-center">
